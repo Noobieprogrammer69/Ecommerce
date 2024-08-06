@@ -21,22 +21,6 @@ const productCtrl = {
         }
     },
 
-    // fetchProducts: async (req, res) => {
-    //     try {
-    //         const products = await Product.find();
-    //         if (products.length === 0) {
-    //             const response = await axios.get("https://fakestoreapi.com/products");
-    //             const productsData = response.data;
-    //             await Product.insertMany(productsData);
-    //             res.json(productsData);
-    //         } else {
-    //             res.json(products);
-    //         }
-    //     } catch (error) {
-    //         res.status(500).json({ error: error.message });
-    //     }
-    // },
-
     fetchProducts: async (req, res) => {
         const { query } = req.query;
         try {
@@ -100,8 +84,8 @@ const productCtrl = {
                 payment_method_types: ['card'],
                 line_items: lineItems,
                 mode: 'payment',
-                success_url: 'http://localhost:3000/success', 
-                cancel_url: 'http://localhost:3000/cancel',   
+                success_url: "http://localhost:5000/success", 
+                cancel_url: "http://localhost:5000/success",   
             });
     
             res.json({ id: session.id });

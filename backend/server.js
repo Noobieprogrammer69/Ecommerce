@@ -3,8 +3,8 @@ const mongoose = require("mongoose")
 const cors = require("cors");
 const express = require("express")
 const cookieParser = require("cookie-parser")
-const axios = require('axios');
 console.log('Stripe Secret Key:', process.env.STRIPE_SECRET_KEY); 
+const path = require("path")
 
 const userRoutes = require("./routes/userRoutes")
 const productRoutes = require("./routes/productRoutes")
